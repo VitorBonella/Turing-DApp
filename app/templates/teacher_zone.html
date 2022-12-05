@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ super() }} - Teacher Zone {% endblock %}
+
+{% block content %}
+
+<div class="card login-form">
+    <div class="card-body">
+        <h3 class="card-title text-center">Mint Turings</h3>
+        <div class="card-text">
+            <form>
+                <div class="form-group">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Address</span>
+                        <input type="text" class="form-control" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default" id="mint-address-input">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Amount</span>
+                        <input type="number" step="any" class="form-control" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default" id="mint-amount-input">
+                    </div>
+                    <button type="button" class="btn btn-primary mb-3" id="mint-btn">Mint</button>
+            </form>
+        </div>
+
+        <h3 class="card-title text-center">Pool Control</h3>
+        <div class="card-text">
+            
+            <form>
+                <div class="form-group">
+                    <div class="text-success fs-3"> Pool Status: Open</div>
+                    <button type="button" class="btn btn-primary mb-3">Close/Open</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+<script src="../static/teacher_zone.js" type="module"></script>
+
+
+{% endblock %}

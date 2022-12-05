@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../static/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <title>{% block title %} Turing DApp {% endblock %}</title>
+</head>
+<body>
+<style>
+html, body { height: 100%; margin: 0; }
+</style>
+<nav class="navbar navbar-expand-lg navbar-light fs-4" style="background-color: #fcfcfc; font-size: 15px !important;">
+  <div class="container-fluid">
+    <a class="navbar-brand nav-item" href="/">
+      <img src="https://imagens.publico.pt/imagens.aspx/6285?tp=EI&db=IMAGES&w=960" width="40" height="40" class="rounded-circle">
+      <t>Turing Awards DApp</t>
+    </a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+            <a class="nav-link" href="/vote">Vote</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/top">Top Stakers</a>
+        </li>
+      </ul>
+        <ul class="nav mb-lg-0 justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link" href="/teacher">Teacher Zone</a>
+        </li>
+        <li>
+          <button type="submit" onclick="" class="btn btn-primary" id="login-btn">Login</button>
+          <a id="user-wallet"></a>
+        </li>
+        </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+
+<script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+<script type='text/javascript' > 
+  var TuringContract = undefined
+</script>
+
+<script src="../static/metamask_login.js"></script>
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

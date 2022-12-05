@@ -1,1 +1,9 @@
-<h1>Hello</h1>
+{% extends 'base.html' %}
+
+{% block title %} {{ super() }} - Index {% endblock %}
+
+{% block content %}
+
+Bem vindo ao DApp do Turing, clique em votar para votar
+
+{% endblock %}
