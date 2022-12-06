@@ -5,8 +5,8 @@
 {% block content %}
 
 
-<div class="row justify-content-center mt-3">
-	<div class="w-25 ">
+<div class="row justify-content-center mt-5">
+	<div class="w-50 ">
 		<table class="table table-dark table-borderless">
 			<thead>
 				<tr>
@@ -16,20 +16,27 @@
 				</tr>
 			</thead>
 			<tbody>
-				{% for l in all_lines %}
+
 				<tr class="table-active">
-					<td>{{l}}</td>
-					<form>
 					<td>
-						<input type="number" step="any" min="0" max="2"/>
-						<button type="submit">Vote</button>
+						<select class="form-select" aria-label="Default select example" id="codename-selected">
+							<option selected>Codename</option>
+							{% for l in all_lines %}
+							<option>{{l}}</option>
+							{% endfor %}
+						</select>
 					</td>
+					<form>
+						<td>
+							<input type="number" step="any" min="0" max="2" id="vote-amount"/>
+							<button type="button" id="vote-btn">Vote</button>
+						</td>
 					</form>
 				</tr>
-				{% endfor %}
+
 			</tbody>
 		</table>
 	</div>
 </div>
-
+<script src="../static/vote.js" type="module"></script>
 {% endblock %}

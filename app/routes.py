@@ -1,5 +1,5 @@
 from flask import render_template
-from turing_contract.codenames_info import codename_list
+from turing_contract.infos import codename_list,top_stakers
 from app import app
 
 
@@ -13,8 +13,8 @@ def vote():
     return render_template('vote.html',all_lines = codename_s)
 
 @app.route('/top')
-def top_stakers():
-    codename_s = codename_list()
+def top_staker():
+    codename_s = top_stakers()
     return render_template('top_stakers.html',all_lines = codename_s)
 
 @app.route('/teacher')
