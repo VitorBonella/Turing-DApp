@@ -7,7 +7,9 @@ async function mintTokens() {
     let addressMint = address_mint.value;
     let amountMint = amount_mint.value;
 
-    TuringContract.issueToken(addressMint,amountMint * (10**18)).catch((err) => {
+    let value_converted = (amountMint*(10**18)).toString()
+
+    TuringContract.issueToken(addressMint,value_converted).catch((err) => {
         alert("Error mint tokens" + err.message);
       });
 }

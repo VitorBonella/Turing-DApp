@@ -5,10 +5,12 @@ const btn_vote = document.getElementById('vote-btn')
 async function vote(){
 
     let codename = selector.options[selector.selectedIndex].text;
-    let amount = amount_input.value * (10**18)
+    let amount = amount_input.value
+
+    let value_converted = (amount*(10**18)).toString()
     
-    TuringContract.vote(codename,amount).catch((err) => {
-        alert("Error end pool" + err.message);
+    TuringContract.vote(codename,value_converted).catch((err) => {
+        alert("Error vote" + err.message);
     });
 
 
