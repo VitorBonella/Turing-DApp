@@ -25,20 +25,27 @@ async function switchPoll() {
 
 }
 
-async function setPollOpened(){
 
-
-  const opened = await TuringContract.PollOpened();
-
-  if(opened){
-    pool_status.innerText = "Pool Status: Open";
-  }
-  else{
-    pool_status.innerText = "Pool Status: Close";
-  }
-
+var isEndedVote = true;
+const EndedVote = async() => {
+	try{
+		const voting = await TuringContract.PollOpened();
+		isEndedVote = voting;
+	} catch(e){}
 }
 
-//setPollOpened() tem q acertar isso
+function endedVoting(){
+	EndedVote();
+  if(isEndedVote){
+    pool_status.innerText = "Poll Status: Open";
+    pool_status.className = "text-success fs-3"
+  }
+  else{
+    pool_status.innerText = "Poll Status: Close";
+    pool_status.className = "text-danger fs-3"
+  }
+}
+
+setInterval(endedVoting, 5000)
 mint_btn.addEventListener('click', mintTokens)
 pool_btn.addEventListener('click', switchPoll)
